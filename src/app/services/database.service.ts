@@ -15,7 +15,8 @@ export class DatabaseService {
 
   loadData(){
     this.users=JSON.parse(localStorage.getItem("users") ?? "[]")
-    console.log(this.users)
+    this.isLoggedIn=localStorage.getItem("isLoggedIn")
+    console.log(this.users,this.isLoggedIn)
   }
 
   
