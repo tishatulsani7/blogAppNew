@@ -1,0 +1,34 @@
+<div class="container">
+    <form>
+        <div>
+            <label for="title">Enter the title:</label>
+            <input type="text" id="title">
+        </div>
+        <div>
+            <label for="description">Enter Description:</label>
+            <textarea name="description" id="description" formControlName="description" minlength="10"></textarea>
+        </div>
+        <p *ngIf="isFormControlError('description')" class="errors">
+                enter some description
+        </p>
+        <div>
+            <label for="img">Set Img:</label>
+            <input type="file" id="img" formControlName="img">
+        </div>
+        <p *ngIf="isFormControlError('profileImg')" class="errors">
+                Profile image is required
+        </p>
+        <div>
+            <label for="category">Choose a Category:</label>
+            <select id="category" name="category">
+                <option value="lifestyle">Lifestyle</option>
+                <option value="travel">Travel</option>
+                <option value="food">Food</option>
+                <option value="education">Education</option>
+            </select>
+        </div>
+
+        <button class="btn">CREATE BLOG!</button>
+        
+    </form>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <form [formGroup]="loginFormGroup" (ngSubmit)="submitForm()">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" formControlName="username">
+        </div>
+        <div *ngIf="isFormControlError('username')">
+            <p>username is required</p>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" formControlName="password">
+        </div>
+        <div *ngIf="isFormControlError('password')">
+            <p>Password is required</p>
+        </div>
+
+        <button [disabled]="this.loginFormGroup.invalid" class="btn">LOGIN</button>
+    </form>
+</div>

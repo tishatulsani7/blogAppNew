@@ -1,0 +1,41 @@
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    width:600px;
+    margin:auto;
+    height:300px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border:10px solid rgb(241, 97, 121);
+    background-color: rgb(246, 205, 212);
+    border-radius: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    
+}
+.btn{
+    margin-top: 20px;
+    background-color:rgb(241, 97, 121);
+    color: white;
+    border: white;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 150px;
+    height: 30px;
+}
+form>div{
+    margin-top:30px;
+}
+.errors{
+    color:blue ;
+}
+
+h2{
+    font-family: cursive;
+
+}

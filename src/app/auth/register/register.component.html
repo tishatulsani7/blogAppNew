@@ -1,0 +1,76 @@
+<div class="container">
+    
+    <form class="d-flex" [formGroup]="registerFormGroup" (ngSubmit)="submitData()">
+        <h2>REGISTRATION</h2>
+        <div>
+            <label for="email">Enter email:</label>
+            <input formControlName="email" type="email" id="email" placeholder="your@example.com">
+        </div>
+        
+            <p *ngIf="isFormControlError('email')" class="errors">
+                Email is required
+            </p>
+            <p *ngIf="getFormControl('email')?.touched && getFormControl('email')?.errors?.['email']" class="errors">
+                Email is invalid
+            </p>
+        
+        <div>
+            <label for="fullName">Enter your Fullname:</label>
+            <input formControlName="fullName" type="text" id="fullName" placeholder="your name">
+        </div>
+        <p *ngIf="isFormControlError('fullName')" class="errors">
+                Fullname is required
+        </p>
+        
+        <div>
+            <label for="username">Enter username:</label>
+            <input formControlName="username" type="username" id="username" placeholder="your username">
+        </div>
+        <p *ngIf="isFormControlError('username')" class="errors">
+                Username is required
+        </p>
+        <p *ngIf="usernameError">
+            user already exists
+        </p>
+        <div>
+            <label for="password">Enter password:</label>
+            <input formControlName="password" type="password" id="password" placeholder="your password">
+        </div>
+        <p *ngIf="isFormControlError('password')" class="errors">
+                password is required
+        </p>
+        <div>
+            <label for="confirmPassword">Enter password again:</label>
+            <input formControlName="confirmPassword" type="password" id="confirmPassword" placeholder="enter password again">
+        </div>
+        <p *ngIf="checkPassword()" class="errors">
+                passwords dont't match
+        </p>
+        <p *ngIf="isFormControlError('confirmPassword')" class="errors">
+                plz enter again
+        </p>
+        <div>
+            <label for="dob">Enter birthday</label>
+            <input type="date" formControlName="dob" id="dob">
+        </div>
+        <p *ngIf="isFormControlError('dob')" class="errors">
+                Dob is required
+        </p>
+        <!-- <div>
+            <label for="profileImg">Set profileImg:</label>
+            <input formControlName="profileImg" type="file" id="profileImg">
+        </div>
+        <p *ngIf="isFormControlError('profileImg')" class="errors">
+                Profile image is required
+        </p> -->
+        <div>
+            <label for="bio">Enter Bio:</label>
+            <textarea name="bio" id="bio" formControlName="bio" minlength="10"></textarea>
+        </div>
+        <p *ngIf="isFormControlError('bio')" class="errors">
+                enter some bio
+        </p>
+        
+        <button class="btn" [disabled]="this.registerFormGroup.invalid || usernameError">REGISTER</button>
+    </form>
+</div>
